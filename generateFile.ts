@@ -18,9 +18,7 @@ export const generateFileContent = async () => {
             min: 4
         }
     });
-    const writer  = fs.createWriteStream(fileName,{
-        flags: 'a+'
-    })
+    const writer  = fs.createWriteStream(fileName)
     const sentence  = lorem.generateParagraphs(7);
     console.log("2. Generating data.");
     for(let i=0; i<400000; i++) writer.write(sentence);
